@@ -25,7 +25,7 @@ function Header() {
   const [user] = useAuthState(auth);
   const dispatch = useDispatch<AppDispatch>()
   return (
-    <nav className="w-full flex items-center justify-between px-3 py-2 bg-gray-800 h-14 rounded-md">
+    <nav className="w-full flex items-center justify-between px-3 py-2 bg-gray-800 h-14 rounded-md z-50">
       {user?.photoURL ? (
         <Image
           src={user?.photoURL!}
