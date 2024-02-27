@@ -93,7 +93,7 @@ function Header({ chatID }: { chatID: string }) {
     fetch();
   }, [chatID]);
   return (
-    <nav className="sticky top-0 left-0 right-0 w-full flex items-center justify-between px-3 bg-gray-800 h-16 py-2 z-40">
+    <nav className="sticky top-0 left-0 right-0 w-full flex items-center justify-between px-3 bg-gray-800 h-16 py-2 z-30">
       <div className="flex flex-1 items-center space-x-2 w-full">
         {recPhoto ? (
           <Image
