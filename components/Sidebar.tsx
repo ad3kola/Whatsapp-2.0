@@ -25,7 +25,7 @@ function Header() {
   const [user] = useAuthState(auth);
   const dispatch = useDispatch<AppDispatch>()
   return (
-    <nav className="w-full flex items-center justify-between px-3 py-2 bg-gray-800 h-14 rounded-md">
+    <nav className="w-full flex items-center justify-between px-3 py-2 bg-gray-800 h-14 rounded-md z-50">
       {user?.photoURL ? (
         <Image
           src={user?.photoURL!}
@@ -107,7 +107,7 @@ function Sidebar() {
       </aside>
 
       {/* Modal Sidebar */}
-      <aside className={`${sidebarState ? 'left-0' : '-left-full'} absolute top-0 bottom-0 duration-1000 transition ease-in-out w-full flex flex-col flex-shrink-0 max-h-screen pb-5 border-gray-600 bg-slate-900 z-30 overflow-hidden`}>
+      <aside className={`${sidebarState ? 'left-0' : '-left-full'} md:hidden absolute top-0 bottom-0 duration-1000 transition ease-in-out w-full flex flex-col flex-shrink-0 max-h-screen pb-5 border-gray-600 bg-slate-900 z-30 overflow-hidden`}>
         <Header />
         <SearchBox setSearchInput={setSearchInput} />
         <div className="pb-3 mt-3 flex flex-col w-full overflow-y-scroll scrollbar-hide scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-sky-500 scrollbar-track-transparent h-full pr-2">

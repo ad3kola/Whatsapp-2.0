@@ -5,13 +5,12 @@ import Image from "next/image";
 
 function SignInPage() {
   const signInUser = () => {
-    console.log("clicked");
     signInWithPopup(auth, provider)
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };
   return (
-    <div className="flex flex-col items-center relative  justify-center h-screen w-full space-y-3">
+    <div className="flex flex-col items-center relative  justify-center h-screen w-full space-y-3 text-center">
       <h2 className="text-4xl font-bold capitalize">
         Welcome to Whatsapp 2.0
       </h2>

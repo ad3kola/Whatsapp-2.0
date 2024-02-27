@@ -71,18 +71,15 @@ function Header({ chatID }: { chatID: string }) {
           getRecipientData(currentChatUsers, user!)
         )
       );
-      console.log(currentChatUsers)
       const recipientSnapshot = await getDocs(q);
       const recipientPhoto =
         recipientSnapshot?.docs?.[0]?.data()?.photoURL;
       setRecPhoto(recipientPhoto);
       const recipientLastSeen =
         recipientSnapshot?.docs?.[0]?.data()?.lastSeen;
-        console.log(recipientLastSeen)
         if (recipientLastSeen) {
       const date = moment(recipientLastSeen?.toDate());
       const lastSeenTimestamp = moment(date)?.format("lll");
-      console.log(lastSeenTimestamp);
           setRecTimestamp(`Last active: ${lastSeenTimestamp}`);
           // Feb 26, 2024 10:57 PM
         } else {
@@ -93,7 +90,7 @@ function Header({ chatID }: { chatID: string }) {
     fetch();
   }, [chatID]);
   return (
-    <nav className="sticky top-0 left-0 right-0 w-full flex items-center justify-between px-3 bg-gray-800 h-16 py-2 z-40">
+    <nav className="sticky top-0 left-0 right-0 w-full flex items-center justify-between px-3 bg-gray-800 h-16 py-2 z-30">
       <div className="flex flex-1 items-center space-x-2 w-full">
         {recPhoto ? (
           <Image
